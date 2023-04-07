@@ -21,6 +21,26 @@
             <th>Actions</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var item in Model.listClients)
+        {
+            <tr>
+          <td>@item.id</td>
+        <td>@item.name</td>
+        <td>@item.email</td>
+        <td>@item.adress</td>
+        <td>@item.phone</td>
+        <td>@item.created_at</td>
+          <td>
+                <a class="btn btn-primary btn-sm" href="/Client/Edit?id=@item.id">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/Client/Delete?id=@item.id">Delete</a>
+           </td> 
+
+           </tr>
+        }
+
+
+    </tbody>
 
 
 </table>
